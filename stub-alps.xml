@@ -1,0 +1,36 @@
+<alps version="1.0">
+    <doc>Onboarding API Profile</doc>
+
+    <!-- Properties -->
+    <descriptor id="onboardingId" type="semantic"></descriptor>
+    <descriptor id="dateCreated" type="semantic"></descriptor>
+    <descriptor id="dateUpdated" type="semantic"></descriptor>
+    <descriptor href="#activity"/>
+    <descriptor id="companyStatus" type="semantic"></descriptor>
+    <descriptor id="accountStatus" type="semantic"></descriptor>
+    <descriptor id="activityStatus" type="semantic"></descriptor>
+    <descriptor id="status" type="semantic"></descriptor>
+
+    <!-- Actions -->
+    <descriptor id="home" type="safe"/>
+
+    <descriptor id="startOnboarding" type="unsafe">
+        <descriptor href="#onboardingId"/>
+    </descriptor>
+
+    <descriptor id="searchOnboardingRecords" type="safe">
+        <descriptor href="#onboardingId"/>
+        <descriptor href="#companyName"/>
+        <descriptor href="#activityType"/>
+    </descriptor>
+
+    <!-- Containers -->
+    <descriptor id="activity" type="semantic">
+        <descriptor id="activityType" type="semantic"></descriptor>
+        <descriptor id="companyId" type="semantic"></descriptor>
+        <descriptor id="accountId" type="semantic"></descriptor>
+        <descriptor id="dataScheduled" type="semantic"></descriptor>
+        <descriptor id="notes" type="semantic"></descriptor>
+    </descriptor>
+
+</alps>
