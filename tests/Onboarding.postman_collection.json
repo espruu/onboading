@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "f8c54d0a-e62b-4ab7-b7ad-69542e9f576a",
+		"name": "Onboarding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fb47bdd0-fd8e-4b79-8285-4186c990d8ee",
+						"exec": [
+							"tests['Status code is 200'] = responseCode.code === 200;",
+							"    ",
+							"pm.test(\"Body matches string\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(pm.response.text()).to.include(\"company\");",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://account-atk.herokuapp.com/account/list",
+					"protocol": "http",
+					"host": [
+						"account-atk",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"account",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Company List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://company-atk.herokuapp.com/company/list",
+					"protocol": "http",
+					"host": [
+						"company-atk",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"company",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ea141fcd-08c0-4c0b-907c-54a79dfbc951",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://activity-atk.herokuapp.com/activity/list",
+					"protocol": "http",
+					"host": [
+						"activity-atk",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"activity",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "617daf05-b7cc-4a1d-b434-392f484e21bd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"email\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://activity-atk.herokuapp.com/activity/filter?activityType=phonecall",
+					"protocol": "http",
+					"host": [
+						"activity-atk",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"activity",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "phonecall"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity Add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edab6d71-7c5e-4ada-9725-28f5cae9b3a2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://activity-atk.herokuapp.com/activity?activityType=phone",
+					"protocol": "http",
+					"host": [
+						"activity-atk",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"activity"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "phone"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
