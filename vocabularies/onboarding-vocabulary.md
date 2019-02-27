@@ -4,7 +4,6 @@
 
 * StartOnboarding
 * GetOnboarding
-* GetOnboardingList
 * CancelOnboarding
 
 ## Properties
